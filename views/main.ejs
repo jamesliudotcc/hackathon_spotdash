@@ -19,67 +19,70 @@
     </div>
 
     <div class="collapsible-body">
-      <div class="article-container">
-        <h6>Ratings</h6>
-        <p style="color: orange">
-          <%= data.ratings %> Yelp Reviews
-        </p>
-        <h6>Categories</h6>
-        <ul>
-          <% data.details.categories.forEach(function(category) { %>
-          <li>
-            <%= category.title %>
-          </li>
-          <% }); %>
-          <div id="<%= data._id %>" class="mapbox">
-          </div>
-          <script>
-              document.addEventListener('DOMContentLoaded', function(event) {
-                const lng = <%= data.details.coordinates.longitude %>;
-                const lat = <%= data.details.coordinates.latitude %>;
-                mapboxgl.accessToken =
-                  'pk.eyJ1IjoiamFtZXNsaXVkb3RjYyIsImEiOiJjanFta3huaDIwMGNhM3hxcWo4ZHFnb2Z6In0.7eRY7YP4uy2VtF3ovcJeuw';
-                var map = new mapboxgl.Map({
-                  container: '<%= data._id %>', // container id
-                  style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
-                  center: [lng, lat], // starting position [lng, lat]
-                  zoom: 15, // starting zoom
-                });
-                map.on('load', function() {
-                  map.loadImage(
-                    '/img/pin.png',
-                    function(error, image) {
-                      if (error) throw error;
-                      map.addImage('marker', image);
-                      map.addLayer({
-                        id: 'points',
-                        type: 'symbol',
-                        source: {
-                          type: 'geojson',
-                          data: {
-                            type: 'FeatureCollection',
-                            features: [
-                              {
-                                type: 'Feature',
-                                geometry: {
-                                  type: 'Point',
-                                  coordinates: [lng, lat],
-                                },
-                              },
-                            ],
-                          },
-                        },
-                        layout: {
-                          'icon-image': 'marker',
-                          'icon-size': .5,
-                        },
-                      });
-                    }
-                  );
-                });
+      <div class="article-container" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between">
+        <div class="article-container-left">
+          <h6>Ratings</h6>
+          <p style="color: orange">
+            <%= data.ratings %> Yelp Reviews
+          </p>
+          <h6>Categories</h6>
+          <ul>
+            <% data.details.categories.forEach(function(category) { %>
+            <li>
+              <%= category.title %>
+            </li>
+            <% }); %>
+          </ul>
+        </div>
+        <div id="<%= data._id %>" class="mapbox">
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function(event) {
+              const lng = <%= data.details.coordinates.longitude %>;
+              const lat = <%= data.details.coordinates.latitude %>;
+              mapboxgl.accessToken =
+                'pk.eyJ1IjoiamFtZXNsaXVkb3RjYyIsImEiOiJjanFta3huaDIwMGNhM3hxcWo4ZHFnb2Z6In0.7eRY7YP4uy2VtF3ovcJeuw';
+              var map = new mapboxgl.Map({
+                container: '<%= data._id %>', // container id
+                style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
+                center: [lng, lat], // starting position [lng, lat]
+                zoom: 15, // starting zoom
               });
-            </script>
-        </ul>
+              map.on('load', function() {
+                map.loadImage(
+                  '/img/pin.png',
+                  function(error, image) {
+                    if (error) throw error;
+                    map.addImage('marker', image);
+                    map.addLayer({
+                      id: 'points',
+                      type: 'symbol',
+                      source: {
+                        type: 'geojson',
+                        data: {
+                          type: 'FeatureCollection',
+                          features: [
+                            {
+                              type: 'Feature',
+                              geometry: {
+                                type: 'Point',
+                                coordinates: [lng, lat],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                      layout: {
+                        'icon-image': 'marker',
+                        'icon-size': .5,
+                      },
+                    });
+                  }
+                );
+              });
+            });
+        </script>
+        
       </div>
     </div>
   </li>
