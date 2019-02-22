@@ -16,3 +16,7 @@ $(document).ready(function(){
       $('.carousel').carousel('next');
   }, 3000);
 });
+
+$(document).ready(function(){
+  $('.collapsible').collapsible();
+});

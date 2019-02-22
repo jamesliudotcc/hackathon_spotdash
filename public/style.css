@@ -1,179 +1,311 @@
 .navbar {
-	min-height: 50px;
-	margin-bottom: 50px;
-	padding-bottom: 20px;
+  min-height: 50px;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
 }
 .nav-wrapper {
-	background-color: #282828;
+  background-color: #282828;
+  padding-bottom: 5px !important;
 }
 
 .alertIcon {
-	margin: 5px;
-	height: 75px;
+  margin: 5px;
+  height: 75px;
 }
 
 .btn {
-	background-color: #d42aff ;
+  background-color: #d42aff;
 }
 
 .btn2 {
-	background-color: #3b5998;
-	margin: 0 10px 0;
+  background-color: #3b5998;
+  margin: 0 10px 0;
 }
 
 .btn:hover {
-	background-color: #e371ff;
+  background-color: #e371ff;
 }
 
 .btn2:hover {
-	background-color: #6f7d9b;
+  background-color: #6f7d9b;
 }
 
 nav a {
-	margin: 8px 10px 15px;
-	text-decoration: none;
-	font-weight: bold;
-    font-size: 25px;
+  margin: 8px 10px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 #searchbaronmain {
-	margin: 0;
+  margin: 0;
 }
 
 .btn:hover {
-	background-color: #858fff;
+  background-color: #858fff;
 }
 
 /* label focus color */
 .input-field input:focus + label {
-	color: #d42aff !important;
-  }
-  /* label underline focus color */
+  color: #d42aff !important;
+}
+/* label underline focus color */
 .row .input-field input:focus {
-	border-bottom: 1px solid #d42aff !important;
-	box-shadow: 0 1px 0 0 #d42aff !important;
-	background-color: #282828 !important;
+  border-bottom: 1px solid #d42aff !important;
+  box-shadow: 0 1px 0 0 #d42aff !important;
+  background-color: #282828 !important;
 }
 
-.input-field input[type=email]:focus + label {
-     color: #6774ff;
+.input-field input[type='email']:focus + label {
+  color: #6774ff;
 }
 
-.input-field input[type=email]:focus {
-	 border-bottom: 1px solid #6774ff;
-	 box-shadow: 0 1px 0 0 #6774ff;
+.input-field input[type='email']:focus {
+  border-bottom: 1px solid #6774ff;
+  box-shadow: 0 1px 0 0 #6774ff;
 }
 
 body {
-	font-family: 'Raleway', sans-serif;
-	color: white;
-	background-color: rgb(255, 255, 255);
+  font-family: 'Raleway', sans-serif;
+  background-color: rgb(255, 255, 255);
 }
 
 .sidenav-transition .sidenav-backdrop.mat-sidenav-shown {
-    background: #282828 !important;  
+  background: #282828 !important;
 }
 
 .faveButtons {
-	margin: 5px 5px 20px;
-	color: rgb(255, 91, 15);
+  margin: 5px 5px 20px;
+  color: rgb(255, 91, 15);
 }
 
 .card {
-	font-family: 'Raleway', sans-serif;
-	font-weight: 400;
-    font-size: 20px;
-    color: #172696;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #172696;
 }
 
 .card-title {
-	text-shadow: 3px 3px 4px #323232 !important;
+  text-shadow: 3px 3px 4px #323232 !important;
 }
 
-.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.no-js #loader {
+  display: none;
+}
+.js #loader {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 0;
+}
 .se-pre-con {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background: url(../img/loader.gif) center no-repeat #282828;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(../img/loader.gif) center no-repeat #282828;
 }
 
 .datepicker-calendar-container {
-	color: black;
+  color: black;
 }
 
 .mainsearch {
-	-ms-box-orient: horizontal;
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-justify-content: space-between; 
-	justify-content: space-between; 
-	width: 100%;
-	padding: 0;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
 }
 
 .btn-floating {
-	margin: 15px;
+  margin: 15px;
 }
 
 .carousel {
-	/* margin-top: 40px; */
-	border-radius: 5px;
+  /* margin-top: 40px; */
+  border-radius: 5px;
 }
 
-.carousel-item img{
-	width: 100%;
+.carousel-item img {
+  width: 100%;
 }
 
 .carousel-fixed-item h1 {
-	font-family: 'EB Garamond', serif;
-	text-shadow: 3px 3px 4px #323232;
-	color: white;
+  font-family: 'EB Garamond', serif;
+  text-shadow: 3px 3px 4px #323232;
+  color: white;
 }
 
 .carousel-fixed-item p {
-	background-color: rgba(0,0,0,0.4);
-
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .responsive-img {
-	height: 75px;
-	width: 75px;
-	
+  height: 75px;
+  width: 75px;
 }
-.cardcolor { 
-	background-color: #3b3b3b !important;
+.cardcolor {
+  background-color: #3b3b3b !important;
 }
 .collection {
-	border-color: #282828 !important;
+  border-color: #282828 !important;
 }
 
 .secondary-content {
-	border-color: #3b3b3b !important;
+  border-color: #3b3b3b !important;
 }
 
 .coindetails {
-	color: #eb9bff;
-	font-weight: 400;
-	font-size: 20px;
+  color: #eb9bff;
+  font-weight: 400;
+  font-size: 20px;
 }
 
 @media screen and (min-width: 601px) {
-	div.mobilefriendlytext {
-	  font-size: 30px;
-	}
+  div.mobilefriendlytext {
+    font-size: 30px;
+  }
 }
-  
+
 @media screen and (max-width: 600px) {
-	div.mobilefriendlytext {
-		font-size: 15px;
-	}
+  div.mobilefriendlytext {
+    font-size: 15px;
+  }
+}
+
+i.icon-red {
+  color: red;
+}
+i.icon-orange {
+  color: orange;
+}
+i.icon-yellow {
+  color: yellow;
+}
+i.icon-green {
+  color: green;
+}
+i.icon-blue {
+  color: blue;
+}
+.address {
+  margin-left: auto;
+  margin-right: 50px;
+}
+
+.bikerack {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.collapsible-header {
+  width: 100% !important;
+  /* text-align: center !important; */
+}
+
+@media screen and (min-width: 601px) {
+  .mapbox {
+    height: 300px;
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mapbox {
+    height: 150px;
+    width: 250px;
+  }
+}
+
+/* .mapbox {
+  height: 300px;
+  width: 500px;
+} */
+
+/* .mapbox {
+	width: 100%;
+	height: auto;
+	max-width: 500px;
+} */
+
+#left {
+  float: left;
+  width: 400px;
+  padding: 0;
+}
+
+#center {
+  display: inline-block;
+  margin: 0 auto;
+  width: 400px;
+}
+
+#right {
+  float: right;
+  width: 200px;
+}
+
+.page-footer {
+  background-color: #282828 !important;
+}
+
+a.mainheader {
+  color: black !important;
+}
+
+.mainbutton {
+  margin: 50px 0 100px;
+}
+
+#centerimage {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+}
+
+#centerimagetext {
+  margin-bottom: 50px;
+}
+
+.headline {
+  /* display: block; */
+  text-align: center;
+}
+
+.collapsible-body {
+  width: 100% !important;
+  /* text-align: center !important; */
+}
+
+/* #left {
+  float: left;
+  width: 400px;
+  padding: 0;
+}
+
+#center {
+  display: inline-block;
+  margin: 0 auto;
+  width: 400px;
+}
+
+.mapbox {
+  float: right;
+  width: 200px;
+} */
+
+.pin {
+  width: 25px;
+  height: 25px;
+  margin-right: 7px;
 }
