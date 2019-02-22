@@ -17,6 +17,22 @@ app.set('view engine', 'ejs');
 app.use(layouts);
 app.use('/', express.static('public'));
 
+app.get('/:id', async (req, res) => {
+  //
+  try {
+    if (Number(req.params.id)) {
+      console.log(req.params.id);
+      docs = await getDataFromMongo(Number(req.params.id));
+    } else {
+      throw new Error('Parameter is not a number');
+    }
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+  res.send(docs);
+});
+
 app.get('/', async (req, res) => {
   //
   docs = await getDataFromMongo(0);
