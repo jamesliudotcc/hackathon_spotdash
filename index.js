@@ -6,12 +6,9 @@ const layouts = require('express-ejs-layouts');
 
 const MongoClient = require('mongodb').MongoClient;
 
-const url = 'mongodb://localhost/bikerackputter';
+console.log('Mongo URI', process.env.MONGODB_URI);
 
-// // import geocoding services from mapbox sdk
-// const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
-// // create a geocoding client
-// const geocodingClient = mbxGeocoding({ accessToken: process.env.GEOCODING_CLIENT_ID })
+const url = process.env.MONGODB_URI;
 
 app.set('view engine', 'ejs');
 app.use(layouts);
@@ -59,7 +56,7 @@ module.exports = server;
 async function getDataFromMongo(offset) {
   try {
     const client = await MongoClient.connect(url, { useNewUrlParser: true });
-    const db = client.db('bikerackputter');
+    const db = client.db('spotdash');
     const col = db.collection('restaurants_by_need_full');
 
     return (docs = await col
@@ -69,7 +66,6 @@ async function getDataFromMongo(offset) {
       .limit(10)
       .toArray());
   } catch (error) {
-    res.send('something went wrong');
     console.log(error);
   }
 }
