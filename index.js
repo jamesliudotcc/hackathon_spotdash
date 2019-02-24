@@ -5,8 +5,6 @@ const layouts = require('express-ejs-layouts');
 
 const MongoClient = require('mongodb').MongoClient;
 
-console.log('Mongo URI', process.env.MONGODB_URI);
-
 const url = process.env.MONGODB_URI;
 
 app.set('view engine', 'ejs');
@@ -35,12 +33,6 @@ app.get('/main/:id', async (req, res) => {
     console.log(error);
     res.redirect('/main');
   }
-  res.send(docs);
-});
-
-app.get('/raw', async (req, res) => {
-  //
-  docs = await getDataFromMongo(0);
   res.send(docs);
 });
 
