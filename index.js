@@ -41,7 +41,24 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-var server = app.listen(process.env.PORT || 3000);
+app.get('/api/:id', async (req, res) => {
+  try {
+    if (Number(req.params.id)) {
+      doc = await getDataFromMongo(Number(req.params.id));
+
+      return res.json({ data: doc });
+    } else {
+      throw new error('Parameter is not a number');
+    }
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+const port = process.env.PORT || 3000;
+var server = app.listen(port);
+console.log(`Listening on port ${port}`);
+
 module.exports = server;
 
 async function getDataFromMongo(offset) {
